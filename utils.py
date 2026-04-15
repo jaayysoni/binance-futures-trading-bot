@@ -1,3 +1,4 @@
+#utils.py
 import logging
 
 # ---------------- LOGGING ----------------
@@ -24,6 +25,7 @@ def validate_input(symbol, side, order_type, quantity, price):
 
 # ---------------- ORDER ----------------
 def place_order(client, symbol, side, order_type, quantity, price=None):
+    symbol = symbol.upper()
     logging.info(f"Placing order: {side} {symbol} {order_type} {quantity} {price}")
 
     if order_type == "MARKET":
